@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E9B34A;
+    padding: 2vmax;
+}
+
+.container {
+    outline: 1vmax solid #A94141;
+    background-color: #E9B34A;
+    padding: 4vmax;
+    box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 40vmax;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2.5vmax;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.25vmax;
+    border: 0.125vmax solid #ccc;
+    border-radius: 0.625vmax;
+    outline: none;
+    font-size: 1vmax;
+}
+
+textarea {
+    resize: vertical; /* Allow only vertical resizing */
+    max-width: 100%; /* Ensure it doesn't extend beyond the form */
+}
+
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover {
+    border-color: #A94141;
+}
+
+label {
+    position: absolute;
+    top: 1.25vmax;
+    left: 1.25vmax;
+    background-color: #E9B34A;
+    padding: 0 0.625vmax;
+    color: #666;
+    transition: 0.3s;
+    pointer-events: none;
+    font-size: 1vmax;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: -1.875vmax;
+    left: 0.625vmax;
+    font-size: 0.75vmax;
+    color: black;
+}
+
+button {
+    padding: 1.25vmax;
+    border: none;
+    border-radius: 0.625vmax;
+    background-color: #A94141;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1vmax;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: snow;
+    color: black;
+}
+
+.back-button {
+    display: inline-block;
+    text-align: center;
+    margin-top: 1vmax;
+    padding: 1.25vmax;
+    border: none;
+    border-radius: 0.625vmax;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1vmax;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: snow;
+    color: black;
+}
+
+@media (max-width: 30vmax) {
+    .container {
+        padding: 3vmax;
+    }
+
+    input,
+    textarea {
+        padding: 1vmax;
+    }
+
+    button,
+    .back-button {
+        padding: 1vmax;
+    }
+}
